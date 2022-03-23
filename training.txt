@@ -1,0 +1,221 @@
+
+March 11:
+double d_pi = 3.14;
+
+	double? d_pi = 3.14;
+	char? c_WorkType = 'H'; // 'B', 'O'
+
+
+	int i_Exp = 0;
+	
+	int? i_ActualExp = i_Exp;
+--------------------------------------------
+int i = 123;
+	object o = i;
+
+	int? j = (int?) o;
+--------------------------------------------
+int? m = 20; 
+	//int? m = null; 
+
+	int k = m ?? -10;
+
+	Console.WriteLine("k is: " + k.ToString());
+-------------------------------------------------
+bool[][] myBools = new bool[2][];
+
+		myBools[0] = new bool[2];
+		myBools[1] = new bool[1];
+
+
+		myBools[0][0] = true;
+		myBools[0][1] = false;
+		myBools[1][0] = true;
+		Console.WriteLine ("myBools[0][0]: {0}, myBools[1][0]: {1}", myBools[0][0],  myBools[1][0]);
+---------------------------------------------------------------------------------------------------------------------use int and built int array.
+double[,] myDoubles = new double[2, 2];
+---------------------------------------------
+// Three-dimensional array.
+		int[,,] array3D = new int[,,] { { { 1, 2, 3 }, { 4, 5, 6 } }, { { 7, 8, 9 }, { 10, 11, 12 } } };
+		Console.WriteLine ("array3D[0,0,0]: {0}, array3D[0,0,1]: {1}, array3D[0,1,0] {2}", array3D[0,0,0], array3D[0,0,1], array3D[0,1,0]);
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+class WhileLoop
+{
+	//Main begins program execution
+	public static void Main()
+	{
+		bool strFlag = true;
+
+		Console.Write ("Entering the loop...Press Y to Continue, N to exit \n");
+		while (strFlag)
+		{
+			// receiving the input value to check in switch cases...Y => for continuing, N => to exit, ...
+			switch ( Console.ReadLine().ToUpper()  )
+			{
+			  case ("Y"):
+			  case ("y"):
+  			     Console.Write ("Continuing in the loop \n");
+			  break;
+
+			  case "N":
+			  case "n":
+  			    Console.Write ("Exitting the loop. Good bye.");
+			    strFlag = false;
+			  break;
+			
+			  default:
+  			  Console.Write ("Invalid entry...Please enter Y/n or N/n. \n");
+			  break;
+
+			}			
+		}
+	}
+}
+---------------------------------------------------
+
+
+public static void Main()
+	{
+		for (int i=0; i < 20; i++)
+		{
+			if (i == 10)
+				break;
+			if (i % 2 ==0)
+				continue;
+			
+			Console.Write("{0}", i);
+			Console.Write(Convert.ToString(i));
+		}
+		Console.WriteLine();
+	}
+----------------------------------------------------------------------------------------
+string[] names = {"Cheryl", "Joe", "Matt", "Robert"};
+	var changeCaseNames = 
+		from n in names
+		select new { UCase = n.ToUpper(), LCase = n.ToLower() }
+
+		foreach (var v_names in changeCaseNames)
+			Console.WriteLine("{0}, {1}", v_names.UCase, v_names.LCase);
+-----------------------------------------------------------------------------------------------------------------------
+static void Main(string[] args)  
+	{
+  	   //int retVal = FindSum(firstNumber: 2, secondNumber: 3);
+  	   //int retVal = FindSum(secondNumber: 3, firstNumber: 2);
+  	   //int retVal = FindSum(2, secondNumber: 3);
+  	   //int retVal = FindSum(secondNumber: 3, 2);  X
+
+	   int retVal = FindSum(2, 3);
+
+	   int retVal = FindSum(2);
+
+	   Console.WriteLine(retVal.ToString());
+	}
+
+	public static int FindSum(int firstNumber, int secondNumber = 10)
+	{
+     	  return firstNumber + secondNumber;
+	}
+---------------------------------------------------------------------------------------------------------------------------------
+linksssssssssss
+Boxing / Unboxing -> https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/boxing-and-unboxing
+Nullable => 
+	Value Type (C# 2.0 onwards)-> https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types
+Implicitly Typed Local Variable (C# 3.0 onwards) => https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables
+Anonymous Type => https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/anonymous-types
+Equals() vs == => https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/equality-operators
+Parse() vs TryParse() + Convert => https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number#:~:text=The%20Parse%20method%20returns%20the,exception%2C%20but%20TryParse%20returns%20false%20.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------
+class WhileLoop
+{
+	//Main begins program execution
+	public static void Main()
+	{
+		bool strFlag = true;
+
+		Console.Write ("Entering the loop...Press Y to Continue, N to exit \n");
+		while (strFlag)
+		{
+			// receiving the input value to check in switch cases...Y => for continuing, N => to exit, ...
+			switch ( Console.ReadLine().ToUpper()  )
+			{
+			  case ("Y"):
+			  case ("y"):
+  			     Console.Write ("Continuing in the loop \n");
+			  break;
+
+			  case "N":
+			  case "n":
+  			    Console.Write ("Exitting the loop. Good bye.");
+			    strFlag = false;
+			  break;
+			
+			  default:
+  			  Console.Write ("Invalid entry...Please enter Y/n or N/n. \n");
+			  break;
+
+			}			
+		}
+	}
+}
+---------------------------------------------------
+
+
+public static void Main()
+	{
+		for (int i=0; i < 20; i++)
+		{
+			if (i == 10)
+				break;
+			if (i % 2 ==0)
+				continue;
+			
+			Console.Write("{0}", i);
+			Console.Write(Convert.ToString(i));
+		}
+		Console.WriteLine();
+	}
+----------------------------------------------------------------------------------------
+string[] names = {"Cheryl", "Joe", "Matt", "Robert"};
+	var changeCaseNames = 
+		from n in names
+		select new { UCase = n.ToUpper(), LCase = n.ToLower() }
+
+		foreach (var v_names in changeCaseNames)
+			Console.WriteLine("{0}, {1}", v_names.UCase, v_names.LCase);
+--------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
